@@ -52,9 +52,11 @@ The main methodology that has been used can be divided into 2 parts :-
    git clone https://github.com/RaunakDasgupta/MedMate
    ```
 
-2. Navigate to the backend folder,install the required dependencies and start the webserver on port 8000
+2. Create a vitual environment(The following code segment is for **Windows users only**), navigate to the backend folder,  install the required dependencies.
 
    ```
+   python -m venv venv
+   venv\Scripts\activate
    cd backend
    pip install -r requirements.txt
    ```
@@ -72,6 +74,7 @@ The main methodology that has been used can be divided into 2 parts :-
    ```
    http://localhost:8000/home/
    ```
+   
 5. Once you are at the **upload** route, select the image of your urine test in the box provided on the screen, aand it return the list of RGB values. For testing the results on uploading an image, navigate to:
    ```
    http://localhost:8000/upload/
