@@ -53,10 +53,7 @@ async def colour_analyzer(filepath):
     if image is None:
         print("Error: Unable to load image.")
         return None
-
-    # Define the positions and dimensions of the segments
- # Half of the image width
-
+    
     # Resize the image as in the original code
     temp_image = image[50:1000, 150:175]
     height, width, _ = temp_image.shape
