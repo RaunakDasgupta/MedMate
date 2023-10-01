@@ -75,7 +75,7 @@ The main methodology that has been used can be divided into 2 parts :-
    http://localhost:8000/home/
    ```
    
-5. Once you are at the **upload** route, select the image of your urine test in the box provided on the screen, aand it return the list of RGB values. For testing the results on uploading an image, navigate to:
+5. Once you are at the **upload** route, select the image of your urine test in the box provided on the screen, and it return the list of RGB values. For testing the results on uploading an image, navigate to:
    ```
    http://localhost:8000/upload/
    ```
