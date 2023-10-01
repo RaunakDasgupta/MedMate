@@ -1,0 +1,12 @@
+.main {
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  background-color: beige;
+  padding: 10px;
+}
+body {
+  background-color: lightblue;
+  align-items: center;
+  text-align: center;
+}

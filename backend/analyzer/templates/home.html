@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="analyzer/css/home.css " />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Page</title>
+  </head>
+  <body>
+    <h1>Urine Analyzer</h1>
+    <p>Upload your test and receive results in seconds.</p>
+
+    <!-- Button to redirect to another route -->
+    <button onclick="redirectToAnotherRoute()">Upload Your Test</button>
+
+    <script>
+      // JavaScript function to handle the button click and redirect
+      function redirectToAnotherRoute() {
+        // You can change the URL to your desired route
+        window.location.href = 'http://localhost:8000/upload';
+      }
+    </script>
+  </body>
+</html>

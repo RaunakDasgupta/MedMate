@@ -1,15 +1,32 @@
 from django.shortcuts import render, HttpResponse
 from .forms import ImageForm
+from .analyzer import  colour_analyzer
 
-def UploadFile(request):
-    if request.method == 'POST':
-        form = ImageForm(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponse('The file is saved')
-    else:
-        form = ImageForm()
-    context = {'form':form,}
-    return render(request, 'upload.html', context)
+import asyncio
+from django.views.generic.edit import CreateView
 
-# Create your views here.
+def home(request):
+    return render(request, 'home.html')
+
+
+class UploadFileView(CreateView):
+    form_class = ImageForm
+    template_name = 'upload.html'
+
+    def form_valid(self, form):
+        instance=form.save()
+        image_path = instance.image.path
+        res= asyncio.run(colour_analyzer(image_path))
+
+        empty_form= ImageForm()
+
+        context={
+            'res': res,
+            'form': empty_form,
+            'image': instance.image,
+        }
+
+        return render(self.request, 'upload.html', context)
+    
+upload_file_view = UploadFileView.as_view()
+        
