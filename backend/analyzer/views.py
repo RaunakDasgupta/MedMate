@@ -7,12 +7,12 @@ from django.views.generic.edit import CreateView
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, './analyzer/home.html')
 
 
 class UploadFileView(CreateView):
     form_class = ImageForm
-    template_name = 'analyzer/upload.html'
+    template_name = './analyzer/upload.html'
 
     def form_valid(self, form):
         instance = form.save()
